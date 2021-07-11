@@ -70,8 +70,6 @@ li .btn, .btn-large, .btn-small {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 1024px;
 }
 
 .orderItem {
@@ -80,4 +78,71 @@ li .btn, .btn-large, .btn-small {
   align-items: center;
   font-size: 20px;
   font-weight: 600;
+}
+
+@media (min-width: 767px) {
+  .cart {
+      top: 5rem;
+      bottom: unset;
+  }
+}
+
+.basket-list {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: #fff;
+  width: 50rem;
+  max-width: 95%;
+
+  box-shadow: inset -1px 3px 8px 5px #1f87ff, 2px 5px 16px 0px #0b325e,
+      5px 5px 15px 5px rgba(0, 0, 0, 0);
+
+  animation: show 500ms ease-in-out;
+}
+
+.basket-close {
+  cursor: pointer;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: #fff;
+}
+.basket-delete {
+  cursor: pointer;
+}
+
+@keyframes show {
+  from {
+      top: 70%;
+      opacity: 0;
+  }
+  to {
+      top: 50%;
+      opacity: 1;
+  }
+}
+
+.basket-quantity {
+  cursor: pointer;
+  vertical-align: middle;
+  color: #26a69a;
+}
+
+#toast-container {
+  top: 3rem !important;
+  animation: fade-in 250ms ease-in-out;
+}
+
+@keyframes fade-in {
+  from {
+      opacity: 0;
+      transform: translateY(2rem);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0rem);
+  }
 }
